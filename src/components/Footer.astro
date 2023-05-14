@@ -1,13 +1,11 @@
 ---
-const today = new Date();
+import NavLink from './NavLink.astro';
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+	<nav class="py-8">
+		<NavLink href="https://www.linkedin.com/in/koengommersnl/" target="_blank">LinkedIn</NavLink>
+		<NavLink href="https://github.com/koengommers/" target="_blank">GitHub</NavLink>
+		<NavLink href="https://twitter.com/koengommers" target="_blank">Twitter</NavLink>
+	</nav>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>
