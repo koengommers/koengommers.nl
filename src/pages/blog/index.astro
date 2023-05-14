@@ -19,7 +19,8 @@ const posts = (await getCollection('blog')).sort(
             <div>
               <a class="text-xl font-bold hover:underline" href={`/blog/${post.slug}/`}>{post.data.title}</a>
             </div>
-            <FormattedDate date={post.data.pubDate} />
+            <p>{post.data.description}</p>
+            <FormattedDate small date={post.data.pubDate} />
           </li>
         ))
       }

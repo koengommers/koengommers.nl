@@ -1,12 +1,13 @@
 ---
 export interface Props {
 	date: Date;
+  small?: boolean;
 }
 
-const { date } = Astro.props;
+const { date, small = false } = Astro.props;
 ---
 
-<time class="text-neutral-500 my-1 inline-block" datetime={date.toISOString()}>
+<time class:list={["text-neutral-500 my-1 inline-block", { "text-sm": small }]} datetime={date.toISOString()}>
 	{
 		date.toLocaleDateString('en-us', {
 			year: 'numeric',
