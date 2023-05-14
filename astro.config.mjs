@@ -8,9 +8,4 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: "https://koengommers.nl",
   integrations: [mdx(), sitemap(), tailwind()],
-  markdown: {
-    shikiConfig: {
-      theme: "poimandres"
-    }
-  }
 });
