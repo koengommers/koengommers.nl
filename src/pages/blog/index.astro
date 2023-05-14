@@ -12,19 +12,21 @@ const posts = (await getCollection('blog')).sort(
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <h1 class="text-4xl font-semibold">Blog</h1>
   <section class="my-8">
-    <ul>
-      {
-        posts.map((post) => (
-          <li class="my-4">
-            <div>
-              <a class="text-xl font-bold hover:underline" href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </div>
-            <p>{post.data.description}</p>
-            <FormattedDate small date={post.data.pubDate} />
-          </li>
-        ))
-      }
-    </ul>
+      { posts.length === 0 ? "No posts just yet.": (
+        <ul>
+          {
+            posts.map((post) => (
+              <li class="my-4">
+                <div>
+                  <a class="text-xl font-bold hover:underline" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                </div>
+                <p>{post.data.description}</p>
+                <FormattedDate small date={post.data.pubDate} />
+              </li>
+            ))
+          }
+        </ul>
+      )}
   </section>
   <hr />
 </BaseLayout>
