@@ -9,7 +9,7 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<BaseLayout title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+<BaseLayout title={`Blog - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <h1 class="text-4xl font-semibold">Blog</h1>
   <section class="my-8">
       { posts.length === 0 ? "No posts just yet.": (
