@@ -12,8 +12,8 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <a
   href={href}
   class:list={[
-    "border-b inline-block transition-colors mr-4 hover:border-current",
-    { "border-current": isActive },
+    "border-b inline-block transition-colors hover:border-current",
+    isActive ? "border-current" : "border-gray-200",
     className,
   ]}
   {...props}
